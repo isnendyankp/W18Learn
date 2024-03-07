@@ -1,6 +1,7 @@
 from models.base import Base
 from sqlalchemy import Integer, String, Text, DateTime
 from sqlalchemy.orm import mapped_column
+from sqlalchemy.sql import func
 
 class Product(Base):
     __tablename__ = 'product'
