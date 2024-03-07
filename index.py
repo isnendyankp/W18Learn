@@ -2,6 +2,9 @@ from flask import Flask
 from dotenv import load_dotenv
 from connectors.mysql_connector import connection
 
+from models.product import Product
+from sqlalchemy.orm import sessionmaker
+
 # Load the environment variables from the .env file
 load_dotenv()
 
