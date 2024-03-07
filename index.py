@@ -15,10 +15,17 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
 
-    # insert Using SQL
+    # # insert Using SQL
+    # Session = sessionmaker(connection)
+    # with Session() as s:
+    #     s.execute(text("INSERT INTO product (name, price, description, created_at) VALUES ('Steel Wallet', 145000, 'Created from cow skin')"))
+    #     s.commit()
+
+    # insert Using Model
+    NewProduct = Product( name='Plastic Wallet', price=12000, description='Made from recyled plastic bags', created_at='2021-10-10' )
     Session = sessionmaker(connection)
     with Session() as s:
-        s.execute(text("INSERT INTO product (name, price, description, created_at) VALUES ('Steel Wallet', 145000, 'Created from cow skin')"))
+        s.add(NewProduct)
         s.commit()
 
 
