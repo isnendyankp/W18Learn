@@ -10,3 +10,5 @@ database_name = "product_review"
 connection_string = f'mysql+mysqlconnector://{username}:{password}@{host}/{database_name}'
 engine = create_engine(connection_string)
 
+# Connect to the database
+connection = engine.connect()
