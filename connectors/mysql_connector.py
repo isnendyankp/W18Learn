@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine
+import os
 
 # MySQL Connector using SQLAlchemy Engine
-username = "root"
-password = "0000"
-host = "127.0.0.1"
-database_name = "product_review"
+username = os.getenv("DB_USERNAME")
+password = os.getenv("DB_PASSWORD")
+host = os.getenv("DB_HOST")
+database_name = os.getenv("DB_NAME")
 
 # Print the connection string to connect to the database
 print("Connecting to SQL database")
