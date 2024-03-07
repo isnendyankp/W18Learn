@@ -10,4 +10,4 @@ class Product(Base):
     name = mapped_column(String(100), nullable=False)
     price = mapped_column(Integer)
     description = mapped_column(Text)
-    created_at  = mapped_column(DateTime(timezone=True))
+    created_at  = mapped_column(DateTime(timezone=True), server_default=func.now())
